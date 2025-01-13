@@ -1,0 +1,77 @@
+*, *::before, **:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: #1F2937;
+  font-family: "Moderustic", sans-serif;
+}
+
+input, textarea, button, a {
+  font-family: inherit;
+  color: inherit;
+  font-weight: 500;
+}
+
+.logo {
+  display: block;
+  margin: auto;
+  transform: translateY(-3rem);
+}
+
+.hero {
+  text-align: center;
+}
+.hero span:hover {
+  opacity: 0.8;
+}
+.hero span {
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: auto;
+}
+
+.banner {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("src/assets/herobg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 auto 4rem;
+  padding: 1rem;
+  color: white;
+  height: 30rem;
+  border-radius: 15px;
+  animation: fadeIn ease-in 0.8s;
+}
+.banner h1 {
+  font-weight: 600;
+}
+
+.call-to-action {
+  display: block;
+  margin: auto;
+  text-decoration: none;
+  border: 3px inset #776b68;
+  background-color: #c2bcbc;
+  width: 12rem;
+  height: 4rem;
+  padding: 0.2rem;
+  border-radius: 20px;
+  font-size: 1.2rem;
+}
+.call-to-action p {
+  margin-bottom: 0;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}/*# sourceMappingURL=styles.css.map */

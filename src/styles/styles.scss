@@ -1,3 +1,75 @@
-input, textarea, button {
+@import 'mixins', 'variables';
+
+*, *::before, **:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: $body-text-color;
+    font-family: $main-font;
+}
+
+input, textarea, button, a {
     font-family: inherit;
+    color: inherit;
+    font-weight: 500;
+}
+
+.logo {
+    display: block;
+    margin: auto;
+    transform: translateY(-3rem);
+}
+
+.hero {
+    text-align: center;
+    span:hover {
+        opacity: 0.8;
+    }
+    span {
+        display: block;
+        @include dimensions(fit-content, fit-content);
+        margin: auto;
+    }
+}
+
+.banner {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('src/assets/herobg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 auto 4rem;
+    padding: 1rem;
+    color: white;
+    height: 30rem;
+    border-radius: 15px;
+    animation: fadeIn ease-in 0.8s;
+    h1 {
+        font-weight: 600;
+    }
+}
+
+.call-to-action {
+    display: block;
+    margin: auto;
+    text-decoration: none;
+    border: 3px inset $call-to-action-border;
+    background-color: $call-to-action-bg;
+    @include dimensions(12rem, 4rem);
+    padding: .2rem;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    p {
+        margin-bottom: 0;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
