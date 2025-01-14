@@ -39,7 +39,7 @@ export default function Hero() {
           <h2>Search, Track, and Wishlist Books In a Snap!</h2>
         </div>
         <span>
-          <a href="#searchbar" className="call-to-action">
+          <a href="#input" className="call-to-action">
             <p>Begin Exploring</p>
             <FontAwesomeIcon
               icon={faCircleDown}

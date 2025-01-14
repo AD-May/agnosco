@@ -53,7 +53,7 @@ input, textarea, button, a {
 
 .call-to-action {
   display: block;
-  margin: auto;
+  margin: 0 auto 4rem;
   text-decoration: none;
   border: 3px inset #776b68;
   background-color: #c2bcbc;
@@ -65,6 +65,28 @@ input, textarea, button, a {
 }
 .call-to-action p {
   margin-bottom: 0;
+}
+
+#search {
+  margin-left: 0 6rem;
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.45rem;
+}
+
+.form-control {
+  display: inline;
+  padding: 6px 1.6rem;
+  border: 2px solid #9a9190;
+  width: calc(100% - 100px);
+}
+
+#search-btn {
+  display: inline;
 }
 
 @keyframes fadeIn {
