@@ -22,7 +22,7 @@ export default function Hero() {
         const offsetX = (x - centerX) / 10;
         const offsetY = (y - centerY) / 10;
 
-        setShadowStyle(`${offsetX}px ${offsetY}px 5px rgba(0, 0, 0, 0.25)`);
+        setShadowStyle(`${offsetX}px ${offsetY}px 14px rgba(0, 0, 0, 0.10)`);
     };
 
     return (
