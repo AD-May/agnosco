@@ -26,18 +26,18 @@ export default function App() {
   console.log(storedBooks)
 
   return (
-    <div className="container">
-      <header>
-        <img src="src/assets/logo.png" alt="Brand logo" className="logo" />
-      </header>
-      <main>
-        <Hero />
-        <Search onStore={updateFromStorage} />
-        <section id="user-data" className="user-section container">
-          <ReadingHistory books={storedBooks} />
-          <Wishlist books={storedBooks} />
-        </section>
-      </main>
-    </div>
+    <>
+      <div className="container">
+        <header>
+          <img src="src/assets/logo.png" alt="Brand logo" className="logo" />
+        </header>
+          <Hero />
+          <Search onStore={updateFromStorage} />
+      </div>
+      <section id="user-data" className="user-section container">
+        <ReadingHistory books={storedBooks} />
+        <Wishlist books={storedBooks} />
+      </section>
+    </>
   );
 }

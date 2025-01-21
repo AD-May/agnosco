@@ -7,13 +7,15 @@ export default function ReadingHistory({ books }) {
         <div id="reading-history" className="panel">
             <h3>Previously Read</h3>
             <hr></hr>
-            {books.length && (
-                previouslyReadBooks.map((book, index) => 
-                    <Book key={`history-${index}`} {...book} 
-                        searchResultBook={false}
-                    />
-                )
-            )}
+            <div className="book-container">
+                {books.length && (
+                    previouslyReadBooks.map((book, index) => 
+                        <Book key={`history-${index}`} {...book} 
+                            searchResultBook={false}
+                        />
+                    )
+                )}
+            </div>
         </div>
     );
 }

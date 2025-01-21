@@ -7,6 +7,7 @@
 body {
   color: #1F2937;
   font-family: "Moderustic", sans-serif;
+  background-image: linear-gradient(0deg, #e2dfdf, white);
 }
 
 input, textarea, button, a {
@@ -85,7 +86,7 @@ input, textarea, button, a {
 .form-control {
   display: inline;
   padding: 6px 1.6rem;
-  border: 2px solid #9a9190;
+  border: 2px solid #776b68;
   width: calc(100% - 100px);
 }
 
@@ -137,9 +138,37 @@ input, textarea, button, a {
 }
 
 .user-section {
-  background-image: url("src/assets/user-section-bg.png");
-  background-size: cover;
-  background-repeat: none;
+  background-color: #6c645c;
+  height: 70rem;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 10rem;
+  padding: 2rem;
+  border: 1px solid linear-gradient(0deg, #e2dfdf, white);
+  border-radius: 20px;
+  color: #E5E7EB;
+}
+
+.panel {
+  width: 50%;
+  text-align: center;
+}
+.panel hr {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.book-container {
+  display: grid;
+  height: 95%;
+  grid-template-columns: 1fr 1fr;
+  overflow-x: none;
+  overflow-y: auto;
+  padding: 2rem 4rem;
+}
+
+.book {
+  margin: 1rem;
 }
 
 @keyframes fadeIn {
