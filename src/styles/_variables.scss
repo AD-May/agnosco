@@ -1,9 +1,8 @@
-$main-font: 'Moderustic', sans-serif;
-$bg-color: linear-gradient(0deg, #e2dfdf, white);
-$module-bg-color: #F9FAFB;
+$main-font: 'EB Garamond', sans-serif;
 $body-text-color: #1F2937;
 $neutral-color: #E5E7EB;
 $medium-brown:  #776b68;
 $light-gray: #c2bcbc;
 $very-dark-brown: #5d4d47;
 $dark-brown: #6c645c;
+$bg-color: linear-gradient(0deg, $medium-brown, $light-gray, white);

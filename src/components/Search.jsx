@@ -113,9 +113,9 @@ export default function Search({ onStore }) {
                     {currentBooks.map((book, index) => {
                         const props = getBookProps(book);
                         return <Book key={index} {...props}
-                        searchResultBook={true} 
-                        onClickPreviouslyRead={() => storePreviouslyRead(props)}
-                        onClickWishlisted={() => storeWishlisted(props)}
+                            searchResultBook={true} 
+                            onClickPreviouslyRead={() => storePreviouslyRead(props)}
+                            onClickWishlisted={() => storeWishlisted(props)}
                         />
                     })}
                     <button className="btn btn-outline-secondary" onClick={handleNextResults}>

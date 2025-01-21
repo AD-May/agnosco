@@ -60,11 +60,12 @@ input, textarea, button, a {
     margin: 0 auto 4rem;
     text-decoration: none;
     border: 3px inset $medium-brown;
-    background-color: $light-gray;
+    background-color: white;
     @include dimensions(12rem, 4rem);
     padding: .2rem;
     border-radius: 20px;
     font-size: 1.2rem;
+    animation: fadeIn ease-in 2.2s;
     p {
         margin-bottom: 0;
     }
@@ -72,7 +73,12 @@ input, textarea, button, a {
 
 #search {
     margin-left: 0 6rem;
+}
+
+#searchbar {
     position: relative;
+    max-width: 80%;
+    margin: auto;
 }
 
 .search-icon {
@@ -86,10 +92,12 @@ input, textarea, button, a {
     padding: 6px 1.6rem;
     border: 2px solid $medium-brown;
     width: calc(100% - 100px);
+    font-size: 1.2rem
 }
 
 #search-btn {
     display: inline;
+    vertical-align: middle;
 }
 
 #search-results {
@@ -108,9 +116,11 @@ input, textarea, button, a {
     position: relative;
     text-align: center;
     width: 10rem;
-    margin: 0 auto;
+    margin: 1rem auto;
     img {
         margin: 0 auto 1rem;
+        border: 1px solid $light-gray;
+        border-radius: 5px;
     }
 }
 
@@ -133,40 +143,58 @@ input, textarea, button, a {
     color: #b01b2e;
 }
 
+.wave-design {
+    position: absolute;
+    @include dimensions(110%, 30rem);
+    transform: translateY(-8rem);
+    z-index: -1;
+
+}
+
 .user-section {
-    background-color: $dark-brown;
+    max-width: 80%;
+    background-image: url('src/assets/wooden-bg.jpg');
     height: 70rem;
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
-    margin: 10rem;
+    margin: 14rem auto;
     padding: 2rem;
     border: 1px solid $bg-color;
     border-radius: 20px;
     color: $neutral-color;
+    h1 {
+        display: inline-block;
+        margin-right: 1rem;
+    }
 }
 
 .panel {
-    width: 50%;
+    height: 50%;
     text-align: center;
     hr {
-        width: 50%;
-        margin: 0 auto;
+        width: 30%;
+        margin: auto;
+        border: none;
+        height: 3px;
+        background-color: white;
+        opacity: 80%;
     }
 }
 
 .book-container {
     display: grid;
     height: 95%;
-    grid-template-columns: 1fr 1fr;
-    overflow-x: none;
+    grid-template-columns: 1fr 1fr 1fr;
+    overflow-x: hidden;
     overflow-y: auto;
     padding: 2rem 4rem;
 }
 
-.book {
-    margin: 1rem;
+.icon {
+    display: inline-block;
+    font-size: 2rem;
 }
-
 
 
 @keyframes fadeIn {

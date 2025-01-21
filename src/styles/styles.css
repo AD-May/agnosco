@@ -6,8 +6,8 @@
 
 body {
   color: #1F2937;
-  font-family: "Moderustic", sans-serif;
-  background-image: linear-gradient(0deg, #e2dfdf, white);
+  font-family: "EB Garamond", sans-serif;
+  background-image: linear-gradient(0deg, #776b68, #c2bcbc, white);
 }
 
 input, textarea, button, a {
@@ -61,12 +61,13 @@ input, textarea, button, a {
   margin: 0 auto 4rem;
   text-decoration: none;
   border: 3px inset #776b68;
-  background-color: #c2bcbc;
+  background-color: white;
   width: 12rem;
   height: 4rem;
   padding: 0.2rem;
   border-radius: 20px;
   font-size: 1.2rem;
+  animation: fadeIn ease-in 2.2s;
 }
 .call-to-action p {
   margin-bottom: 0;
@@ -74,7 +75,12 @@ input, textarea, button, a {
 
 #search {
   margin-left: 0 6rem;
+}
+
+#searchbar {
   position: relative;
+  max-width: 80%;
+  margin: auto;
 }
 
 .search-icon {
@@ -88,10 +94,12 @@ input, textarea, button, a {
   padding: 6px 1.6rem;
   border: 2px solid #776b68;
   width: calc(100% - 100px);
+  font-size: 1.2rem;
 }
 
 #search-btn {
   display: inline;
+  vertical-align: middle;
 }
 
 #search-results {
@@ -112,10 +120,12 @@ input, textarea, button, a {
   position: relative;
   text-align: center;
   width: 10rem;
-  margin: 0 auto;
+  margin: 1rem auto;
 }
 .book img {
   margin: 0 auto 1rem;
+  border: 1px solid #c2bcbc;
+  border-radius: 5px;
 }
 
 .img-replacement {
@@ -137,38 +147,57 @@ input, textarea, button, a {
   color: #b01b2e;
 }
 
+.wave-design {
+  position: absolute;
+  width: 110%;
+  height: 30rem;
+  transform: translateY(-8rem);
+  z-index: -1;
+}
+
 .user-section {
-  background-color: #6c645c;
+  max-width: 80%;
+  background-image: url("src/assets/wooden-bg.jpg");
   height: 70rem;
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
-  margin: 10rem;
+  margin: 14rem auto;
   padding: 2rem;
-  border: 1px solid linear-gradient(0deg, #e2dfdf, white);
+  border: 1px solid linear-gradient(0deg, #776b68, #c2bcbc, white);
   border-radius: 20px;
   color: #E5E7EB;
 }
+.user-section h1 {
+  display: inline-block;
+  margin-right: 1rem;
+}
 
 .panel {
-  width: 50%;
+  height: 50%;
   text-align: center;
 }
 .panel hr {
-  width: 50%;
-  margin: 0 auto;
+  width: 30%;
+  margin: auto;
+  border: none;
+  height: 3px;
+  background-color: white;
+  opacity: 80%;
 }
 
 .book-container {
   display: grid;
   height: 95%;
-  grid-template-columns: 1fr 1fr;
-  overflow-x: none;
+  grid-template-columns: 1fr 1fr 1fr;
+  overflow-x: hidden;
   overflow-y: auto;
   padding: 2rem 4rem;
 }
 
-.book {
-  margin: 1rem;
+.icon {
+  display: inline-block;
+  font-size: 2rem;
 }
 
 @keyframes fadeIn {

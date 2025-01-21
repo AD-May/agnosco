@@ -34,6 +34,7 @@ export default function App() {
           <Hero />
           <Search onStore={updateFromStorage} />
       </div>
+      <img src="src/assets/wave-design.png" className="wave-design" />
       <section id="user-data" className="user-section container">
         <ReadingHistory books={storedBooks} />
         <Wishlist books={storedBooks} />
