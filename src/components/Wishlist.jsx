@@ -10,7 +10,7 @@ export default function Wishlist({ wishlistedBooks, searchButtonGroup, onClickRe
             <FontAwesomeIcon icon={faGift} className="icon" />
             <hr></hr>
             <div className="book-container">
-                {wishlistedBooks.length && (
+                {wishlistedBooks.length > 0 && (
                     wishlistedBooks.map((book, index) =>
                         <Book key={`wishlist-${index}`} {...book} 
                             buttonType={searchButtonGroup}

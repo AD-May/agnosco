@@ -41,12 +41,12 @@ export default function App() {
     <>
       <div className="container">
         <header>
-          <img src="src/assets/logo.png" alt="Brand logo" className="logo" />
+          <img src="agnosco/public/logo.png" alt="Brand logo" className="logo" />
         </header>
           <Hero />
           <Search onStore={updateFromStorage} />
       </div>
-      <img src="src/assets/wave-design.png" className="wave-design" />
+      <img src="/agnosco/wave-design.png" className="wave-design" />
       <section id="user-data" className="user-section container">
         <ReadingHistory 
           previouslyReadBooks={storedBooks.filter(book => book.previouslyRead)} 

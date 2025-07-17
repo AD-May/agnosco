@@ -10,7 +10,7 @@ export default function ReadingHistory({ previouslyReadBooks, searchButtonGroup,
             <FontAwesomeIcon icon={faCheck} className="icon" />
             <hr></hr>
             <div className="book-container">
-                {previouslyReadBooks.length && (
+                {previouslyReadBooks.length > 0 && (
                     previouslyReadBooks.map((book, index) => 
                         <Book key={`history-${index}`} {...book} 
                             searchButtonGroup={searchButtonGroup}
