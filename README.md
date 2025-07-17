@@ -8,8 +8,7 @@ Agnosco is a lightweight React application that enables users to search for book
 - [Demo](#Demo)
 - [Installation](#Installation)
 - [Usage](#Usage)
-- [Tech Stack](#TechStack)
-- [File Structure](#FileStructure)
+- [Tech Stack](#Stack)
 - [Future](#Future)
 - [License](#License)
 
@@ -47,7 +46,7 @@ https://github.com/user-attachments/assets/a4c24fa5-7bb2-48db-bc7b-0d5595bb3887
 - Click the gift icon (🎁) to add a book to your wishlist.
 - Visit the "Previously Read" and "Wishlist" panels to review or remove saved books.
 
-## Tech stack
+## Stack
 
 - **React & React Hooks** for UI and state management
 - **Bootstrap 5** for layout and styling
