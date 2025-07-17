@@ -15,13 +15,13 @@ export default function Search({ onStore }) {
     const endIndex = startIndex + 5;
     const currentBooks = booklist.length !== 0 ? booklist.slice(startIndex, endIndex) : [];
 
-    const processEnter = (event) => {
+    function processEnter(event) {
         if (event.key === "Enter") {
             handleSearch();
         }
     }
 
-    const handleSearch = async () => {
+    async function handleSearch() {
         setPageIndex(1);
         try {
             const response = await fetch(requestUrl);
@@ -30,7 +30,7 @@ export default function Search({ onStore }) {
             }
             const json = await response.json();
             if (!json) {
-                alert("Could not find any books for that query.")
+                alert("Could not find any books for that query \u{1f622}");
             }
             setBooklist(json.items);
         } catch (err) {
@@ -38,7 +38,7 @@ export default function Search({ onStore }) {
         }
     }
 
-    const getBookProps = book => {
+    function getBookProps(book) {
         const { volumeInfo } = book;
         const authors = volumeInfo.authors ?? null;
         const imageLinks = volumeInfo.imageLinks ?? null;
@@ -61,19 +61,19 @@ export default function Search({ onStore }) {
         }
     }
 
-    const handlePreviousResults = () => {
+    function handlePreviousResults() {
         if (pageIndex > 1) {
             setPageIndex(pageIndex - 1);
         }
     }
 
-    const handleNextResults = () => {
+    function handleNextResults() {
         if (booklist.length > pageIndex * 5) {
             setPageIndex(pageIndex + 1);
         }
     }
 
-    const storePreviouslyRead = (bookProps) => {
+    function storePreviouslyRead(bookProps) {
       const book = {
         ...bookProps,
         previouslyRead: true,
@@ -82,7 +82,7 @@ export default function Search({ onStore }) {
       onStore()
     };
 
-    const storeWishlisted = (bookProps) => {
+    function storeWishlisted(bookProps) {
       const book = {
         ...bookProps,
         wishlisted: true,
@@ -92,37 +92,53 @@ export default function Search({ onStore }) {
     };
 
     return (
-        <section id="search">
-            <search id="searchbar">
-                <FontAwesomeIcon icon={faMagnifyingGlass} className="search-icon" />
-                <input placeholder="Search by Author, Book Title, or ISBN" 
-                    id="input"
-                    className="form-control" aria-label="Type search query here" 
-                    onChange={e => setQuery(e.target.value)} 
-                    onKeyDown={e => processEnter(e, requestUrl)}
+      <section id="search">
+        <search id="searchbar">
+          <FontAwesomeIcon icon={faMagnifyingGlass} className="search-icon" />
+          <input
+            placeholder="Search by Author, Book Title, or ISBN"
+            id="input"
+            className="form-control"
+            aria-label="Type search query here"
+            onChange={(e) => setQuery(e.target.value)}
+            onKeyDown={(e) => processEnter(e, requestUrl)}
+          />
+          <button
+            id="search-btn"
+            className="btn btn-success"
+            onClick={handleSearch}
+          >
+            Search
+          </button>
+        </search>
+        {currentBooks.length !== 0 && (
+          <div id="search-results">
+            <button
+              className="btn btn-outline-secondary"
+              onClick={handlePreviousResults}
+            >
+              <FontAwesomeIcon icon={faArrowLeft} />
+            </button>
+            {currentBooks.map((book, index) => {
+              const props = getBookProps(book);
+              return (
+                <Book
+                  key={index}
+                  {...props}
+                  onClickPreviouslyRead={() => storePreviouslyRead(props)}
+                  onClickWishlisted={() => storeWishlisted(props)}
+                  searchButtonGroup={true}
                 />
-                <button id="search-btn" className="btn btn-success" onClick={handleSearch}>
-                    Search
-                </button>
-            </search>
-            {currentBooks.length !== 0 && (
-                <div id="search-results">
-                    <button className="btn btn-outline-secondary" onClick={handlePreviousResults}>
-                        <FontAwesomeIcon icon={faArrowLeft} />
-                    </button>
-                    {currentBooks.map((book, index) => {
-                        const props = getBookProps(book);
-                        return <Book key={index} {...props}
-                            searchResultBook={true} 
-                            onClickPreviouslyRead={() => storePreviouslyRead(props)}
-                            onClickWishlisted={() => storeWishlisted(props)}
-                        />
-                    })}
-                    <button className="btn btn-outline-secondary" onClick={handleNextResults}>
-                        <FontAwesomeIcon icon={faArrowRight} />
-                    </button>
-                </div>
-            )}
-        </section>    
+              );
+            })}
+            <button
+              className="btn btn-outline-secondary"
+              onClick={handleNextResults}
+            >
+              <FontAwesomeIcon icon={faArrowRight} />
+            </button>
+          </div>
+        )}
+      </section>
     );
 }

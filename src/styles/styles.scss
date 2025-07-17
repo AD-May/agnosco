@@ -79,6 +79,7 @@ input, textarea, button, a {
     position: relative;
     max-width: 80%;
     margin: auto;
+    display: flex;
 }
 
 .search-icon {
@@ -96,8 +97,7 @@ input, textarea, button, a {
 }
 
 #search-btn {
-    display: inline;
-    vertical-align: middle;
+    width: 15%;
 }
 
 #search-results {
@@ -124,8 +124,13 @@ input, textarea, button, a {
     }
 }
 
+.book:hover .button-container {
+    visibility: visible;
+}
+
 .img-replacement {
-    height: 12rem;
+    height: 10rem;
+    margin: auto;
 }
 
 .button-container {
@@ -133,6 +138,8 @@ input, textarea, button, a {
     gap: 0.8rem;
     align-items: center;
     justify-content: space-evenly; 
+    visibility: hidden;
+    animation: fadeIn ease-in 0.7s;
 }
 
 .check {

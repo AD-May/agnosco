@@ -2,8 +2,7 @@ import Book from './Book.jsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
-export default function ReadingHistory({ books }) {
-    const previouslyReadBooks = books.filter((book) => book.previouslyRead);
+export default function ReadingHistory({ previouslyReadBooks, searchButtonGroup, onClickRemove }) {
 
     return (
         <div id="reading-history" className="panel">
@@ -11,10 +10,11 @@ export default function ReadingHistory({ books }) {
             <FontAwesomeIcon icon={faCheck} className="icon" />
             <hr></hr>
             <div className="book-container">
-                {books.length && (
+                {previouslyReadBooks.length && (
                     previouslyReadBooks.map((book, index) => 
                         <Book key={`history-${index}`} {...book} 
-                            searchResultBook={false}
+                            searchButtonGroup={searchButtonGroup}
+                            onClickRemove={() => onClickRemove(book.id)}
                         />
                     )
                 )}

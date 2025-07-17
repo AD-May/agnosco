@@ -1,9 +1,8 @@
 import Book from './Book.jsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faG, faGift } from '@fortawesome/free-solid-svg-icons';
+import { faGift } from '@fortawesome/free-solid-svg-icons';
 
-export default function Wishlist({ books }) {
-    const wishlistedBooks = books.filter((book) => book.wishlisted);
+export default function Wishlist({ wishlistedBooks, searchButtonGroup, onClickRemove }) {
 
     return (
         <div id="wishlist" className="panel">
@@ -11,10 +10,11 @@ export default function Wishlist({ books }) {
             <FontAwesomeIcon icon={faGift} className="icon" />
             <hr></hr>
             <div className="book-container">
-                {books.length && (
+                {wishlistedBooks.length && (
                     wishlistedBooks.map((book, index) =>
                         <Book key={`wishlist-${index}`} {...book} 
-                            searchResultBook={false}
+                            buttonType={searchButtonGroup}
+                            onClickRemove={() => onClickRemove(book.id)}
                         />
                     )
                 )}

@@ -1,19 +1,11 @@
-import { useState } from 'react';
 import ButtonGroup from './ButtonGroup.jsx';
 
 export default function Book(props) {
-    const [displayControls, setDisplayControls] = useState(false);
-
-    const showButtons = displayControls && props.searchResultBook;
 
     const authorString = props.authors?.split(",").join(", ");
 
     return (
-      <div
-        className="book"
-        onMouseEnter={() => setDisplayControls(true)}
-        onMouseLeave={() => setDisplayControls(false)}
-      >
+      <div className="book">
         {props.image ? (
           <img
             src={`${props.image}`}
@@ -29,12 +21,7 @@ export default function Book(props) {
         <p>
           <em>ISBN: {props.isbn ?? "No ISBN available"}</em>
         </p>
-        {showButtons && (
-          <ButtonGroup link={props.link}
-            onClickPreviouslyRead={props.onClickPreviouslyRead}
-            onClickWishlisted={props.onClickWishlisted} 
-          />
-        )}
+        <ButtonGroup {...props} />
       </div>
     );
 }

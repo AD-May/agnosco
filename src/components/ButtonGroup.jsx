@@ -5,13 +5,13 @@ import {
   faGift,
 } from "@fortawesome/free-solid-svg-icons";
 
-export default function ButtonGroup({ link, onClickPreviouslyRead, onClickWishlisted }) {
+export default function ButtonGroup(props) {
   return (
     <>
       <div className="button-container">
-        {link && (
+        {props.link && (
           <a
-            href={link}
+            href={props.link}
             className="btn btn-secondary info-link"
             data-toggle="tooltip"
             data-placement="top"
@@ -21,26 +21,38 @@ export default function ButtonGroup({ link, onClickPreviouslyRead, onClickWishli
             <FontAwesomeIcon icon={faCircleInfo} className="info" />
           </a>
         )}
-        <button
-          className="btn btn-dark history-btn"
-          onClick={onClickPreviouslyRead}
-          data-toggle="toolip"
-          data-placement="top"
-          title="Add to reading history"
-          aria-label="Add to reading history"
-        >
-          <FontAwesomeIcon icon={faCheck} className="check" />
-        </button>
-        <button
-          className="btn btn-success wishlist-btn"
-          onClick={onClickWishlisted}
-          data-toggle="tooltip"
-          data-placement="top"
-          title="Add to wishlist"
-          aria-label="Add to wishlist"
-        >
-          <FontAwesomeIcon icon={faGift} className="gift" />
-        </button>
+        {props.searchButtonGroup ? (
+          <>
+            <button
+              className="btn btn-dark history-btn"
+              onClick={props.onClickPreviouslyRead}
+              data-toggle="toolip"
+              data-placement="top"
+              title="Add to reading history"
+              aria-label="Add to reading history"
+            >
+              <FontAwesomeIcon icon={faCheck} className="check" />
+            </button>
+            <button
+              className="btn btn-success wishlist-btn"
+              onClick={props.onClickWishlisted}
+              data-toggle="tooltip"
+              data-placement="top"
+              title="Add to wishlist"
+              aria-label="Add to wishlist"
+            >
+              <FontAwesomeIcon icon={faGift} className="gift" />
+            </button>
+          </>
+        ) : (
+          <button
+            className="btn btn-outline-danger btn-block"
+            aria-label="Remove from section"
+            onClick={props.onClickRemove}
+          >
+            Remove
+          </button>
+        )}
       </div>
     </>
   );

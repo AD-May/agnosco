@@ -6,13 +6,13 @@ export default function Hero() {
     const bannerRef = useRef(null);
     const [shadowStyle, setShadowStyle] = useState('');
 
-    const handleMouseMove = event => {
+    function handleMouseMove(target) {
         // Get the position and size of the banner element
         const { left, top, width, height } = bannerRef.current.getBoundingClientRect();
 
         // Calculate mouse x/y position relative to banner
-        const x = event.clientX - left;
-        const y = event.clientY - top;
+        const x = target.clientX - left;
+        const y = target.clientY - top;
 
         // Find center point of the banner
         const centerX = width / 2;
