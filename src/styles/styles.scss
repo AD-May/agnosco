@@ -41,7 +41,7 @@ input, textarea, button, a {
 }
 
 .banner {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('/agnosco/herobg.png');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('herobg.png');
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0 auto 4rem;
@@ -160,7 +160,7 @@ input, textarea, button, a {
 
 .user-section {
     max-width: 80%;
-    background-image: url('/agnosco/wooden-bg.jpg');
+    background-image: url('wooden-bg.jpg');
     height: 70rem;
     display: flex;
     flex-direction: column;
