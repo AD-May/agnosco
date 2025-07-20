@@ -10,7 +10,6 @@ Agnosco is a lightweight React application that enables users to search for book
 - [Usage](#Usage)
 - [Tech Stack](#Stack)
 - [Future](#Future)
-- [License](#License)
 
 ## Features
 
