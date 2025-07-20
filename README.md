@@ -58,7 +58,3 @@ https://github.com/user-attachments/assets/a4c24fa5-7bb2-48db-bc7b-0d5595bb3887
 - [ ] Add CSS-implmented bookshelves for wishlisted and previously read books.
 - [ ] Add CSS for pulling a book off the shelf.
 - [ ] Include Quick Read functionality right on the site.
-
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for details.
