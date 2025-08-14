@@ -27,7 +27,7 @@ https://github.com/user-attachments/assets/a4c24fa5-7bb2-48db-bc7b-0d5595bb3887
 ## Installation
 
 1. Clone the repo:
-   `git clone https://github.com/yourusername/agnosco.git
+   `git clone https://github.com/AD-May/agnosco.git
     cd agnosco`
 2. Install dependencies:
    `npm install`
